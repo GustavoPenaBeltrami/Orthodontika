@@ -2,20 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham/Gotham-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham/Gotham-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham/Gotham-Black.otf') format('opentype');
+  font-weight: 900; /* Usualmente se usa 900 para Black */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham/Gotham-Light.otf') format('opentype');
+  font-weight: 300; /* Usualmente se usa 300 para Light */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham/Gotham-Medium.otf') format('opentype');
+  font-weight: 500; /* Usualmente se usa 500 para Medium */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham/Gotham-Thin.otf') format('opentype');
+  font-weight: 100; /* Usualmente se usa 100 para Thin */
+  font-style: normal;
+}
+
+.transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.duration-200 {
+    transition-duration: 200ms;
+}
+
+.ease-in-out {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Gotham', sans-serif;
+}
+
+.test{
+  border: 1px solid red;
 }
