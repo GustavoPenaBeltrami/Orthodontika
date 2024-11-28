@@ -1,11 +1,17 @@
 'use client'
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import ProductCard from './ProductCard';
 import productos from '@/lib/data';
 
-const ProductGrid: React.FC = () => {
+// Create a wrapper component that uses searchParams
+const ProductGridWrapper: React.FC = () => {
     const searchParams = useSearchParams();
+    return <ProductGrid searchParams={searchParams} />;
+};
+
+// Modify ProductGrid to accept searchParams as a prop
+const ProductGrid: React.FC<{ searchParams: URLSearchParams }> = ({ searchParams }) => {
     const categoria = searchParams.get('categoria');
     const subcategoria1 = searchParams.get('subcategoria1');
     const subcategoria2 = searchParams.get('subcategoria2');
@@ -353,4 +359,11 @@ const ProductGrid: React.FC = () => {
     );
 };
 
-export default ProductGrid;
+// Export the wrapped component
+export default function ProductGridWithSuspense() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <ProductGridWrapper />
+        </Suspense>
+    );
+}
