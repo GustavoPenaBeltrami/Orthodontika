@@ -40,7 +40,7 @@ const Cart: React.FC<{ isVisible: boolean, setIsVisible: (visible: boolean) => v
             {cartItems.length === 0 ? (
                 <p>No hay productos en el carrito.</p>
             ) : (
-                <ul>
+                <ul className="overflow-y-scroll max-h-[400px] border p-3 rounded-lg border-[#292658]">
                     {cartItems.map((item) => (
                         <div key={item.id} className="flex items-center justify-between mb-2">
                             <p className="pr-5">{item.nombre}</p>

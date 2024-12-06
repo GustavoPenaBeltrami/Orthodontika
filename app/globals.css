@@ -3,64 +3,148 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Gotham';
-  src: url('/fonts/Gotham/Gotham-Regular.otf') format('opentype');
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/Gotham-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Gotham';
-  src: url('/fonts/Gotham/Gotham-Bold.otf') format('opentype');
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/Gotham-Bold.otf") format("opentype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Gotham';
-  src: url('/fonts/Gotham/Gotham-Black.otf') format('opentype');
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/Gotham-Black.otf") format("opentype");
   font-weight: 900; /* Usualmente se usa 900 para Black */
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Gotham';
-  src: url('/fonts/Gotham/Gotham-Light.otf') format('opentype');
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/Gotham-Light.otf") format("opentype");
   font-weight: 300; /* Usualmente se usa 300 para Light */
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Gotham';
-  src: url('/fonts/Gotham/Gotham-Medium.otf') format('opentype');
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/Gotham-Medium.otf") format("opentype");
   font-weight: 500; /* Usualmente se usa 500 para Medium */
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Gotham';
-  src: url('/fonts/Gotham/Gotham-Thin.otf') format('opentype');
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/Gotham-Thin.otf") format("opentype");
   font-weight: 100; /* Usualmente se usa 100 para Thin */
   font-style: normal;
 }
 
 .transition-all {
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .duration-200 {
-    transition-duration: 200ms;
+  transition-duration: 200ms;
 }
 
 .ease-in-out {
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
-  font-family: 'Gotham', sans-serif;
+  font-family: "Gotham", sans-serif;
 }
 
-.test{
+.test {
   border: 1px solid red;
+}
+
+.bracket-blanco {
+  position: absolute;
+  left: 30vw;
+  top: 4vw;
+  width: 30vw;
+}
+
+.bracket-gris {
+  position: absolute;
+  right: 16vw;
+  top: 20vw;
+  width: 30vw;
+}
+
+@media (max-width: 1920px) {
+  .bracket-blanco {
+    left: 38vw;
+  }
+  .bracket-gris {
+    right: 10vw;
+  }
+}
+
+@media (max-width: 1600px) {
+  .bracket-blanco {
+    left: 50vw;
+    top: 10vh;
+  }
+  .bracket-gris {
+    right: 3vw;
+    top: 45vh;
+  }
+}
+
+@media (max-width: 1170px) {
+  .logo-navbar {
+    max-width: 400px;
+  }
+  .menu-items-container>* {
+    font-size: 20px;
+  }
+}
+@media (max-width: 1150px) {
+  .bracket-blanco {
+    width: 450px;
+    left: auto;
+    right: 1vw;
+  }
+  .bracket-gris {
+    width: 450px;
+    right: 12vw;
+  }
+}
+
+@media (max-width: 990px) {
+  .bracket-blanco {
+    width: 350px;
+    left: auto;
+    right: 0vw;
+  }
+  .bracket-gris {
+    width: 350px;
+    right: 8vw;
+  }
+  .menu-items-container>* {
+    font-size: 18px;
+  }
+  .menu-items-container {
+    gap: 0px 16px !important;
+  }
+}
+
+@media (max-width: 880px) {
+  .bracket-blanco {
+    display: none;
+  }
+  .bracket-gris {
+    display: none;
+  }
+  .logo-navbar {
+    max-width: 60vw;
+  }
 }

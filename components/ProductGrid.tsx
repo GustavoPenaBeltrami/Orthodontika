@@ -237,7 +237,7 @@ const ProductGrid: React.FC<{ searchParams: URLSearchParams }> = ({ searchParams
 
     return (
         <div>
-            <div className="grid gap-10 mb-4 md:grid-cols-6 grid-cols-3 text-black">
+            <div className="grid gap-10 mb-4 md:grid-cols-3 grid-cols-2 text-black max-w-[1600px] mx-auto">
                 <div className='flex'>
                     <select
                         name="marca"
@@ -245,7 +245,7 @@ const ProductGrid: React.FC<{ searchParams: URLSearchParams }> = ({ searchParams
                         value={filters.marca}
                         className=" border-b border-[#292658] cursor-pointer font-bold text-lg text-[#292658] p-2 h-[50px] w-full focus:outline-none"
                     >
-                        <option value="">Seleccionar Marca</option>
+                        <option value="">Marca</option>
                         {getUniqueBrands().map(marca => (
                             <option key={marca} value={marca}>{marca}</option>
                         ))}
@@ -343,7 +343,7 @@ const ProductGrid: React.FC<{ searchParams: URLSearchParams }> = ({ searchParams
                     </button>
                 </div>
             ) : (
-                <div className="flex flex-wrap  justify-center gap-4">
+                <div className="flex flex-wrap  justify-center gap-4 max-w-[1600px] mx-auto">
                     {filteredProducts.map(product => (
                         <ProductCard
                             key={product.id}
